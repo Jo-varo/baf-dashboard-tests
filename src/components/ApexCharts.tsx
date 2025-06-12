@@ -14,7 +14,7 @@ const xFormatter = (data: string) => {
 
 
 // Sync charts doesn't work
-const syncId = 'social'
+// const syncId = 'social'
 
 const ApexChartsLine = () => {
   const options: ApexOptions = useMemo(() => ({
