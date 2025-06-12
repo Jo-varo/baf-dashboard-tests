@@ -1,0 +1,27 @@
+.simple-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: lightblue;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+  }
+  
+  .simple-sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .simple-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
+    /* For fade with pure CSS, you'd need to manage mounting/unmounting with a delay or more complex state */
+  }

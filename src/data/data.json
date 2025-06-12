@@ -1,0 +1,140 @@
+[
+    {
+        "origin": "China",
+        "destination": "USA",
+        "date": "2024-12-10",
+        "shipments": 15
+    },
+    {
+        "origin": "China",
+        "destination": "USA",
+        "date": "2025-01-10",
+        "shipments": 12
+    },
+    {
+        "origin": "China",
+        "destination": "France",
+        "date": "2025-01-20",
+        "shipments": 15
+    },
+    {
+        "origin": "China",
+        "destination": "Canada",
+        "date": "2025-01-25",
+        "shipments": 9
+    },
+    {
+        "origin": "China",
+        "destination": "Italy",
+        "date": "2025-02-11",
+        "shipments": 5
+    },
+    {
+        "origin": "China",
+        "destination": "USA",
+        "date": "2025-02-15",
+        "shipments": 13
+    },
+    {
+        "origin": "China",
+        "destination": "Portugal",
+        "date": "2025-02-28",
+        "shipments": 7
+    },
+    {
+        "origin": "China",
+        "destination": "France",
+        "date": "2025-03-18",
+        "shipments": 21
+    },
+    {
+        "origin": "China",
+        "destination": "Spain",
+        "date": "2025-03-22",
+        "shipments": 11
+    },
+    {
+        "origin": "China",
+        "destination": "Canada",
+        "date": "2025-04-12",
+        "shipments": 8
+    },
+    {
+        "origin": "China",
+        "destination": "Canada",
+        "date": "2025-04-24",
+        "shipments": 10
+    },
+    {
+        "origin": "China",
+        "destination": "USA",
+        "date": "2025-05-10",
+        "shipments": 19
+    },
+    {
+        "origin": "China",
+        "destination": "Italy",
+        "date": "2025-06-11",
+        "shipments": 9
+    },
+    {
+        "origin": "China",
+        "destination": "France",
+        "date": "2025-07-18",
+        "shipments": 10
+    },
+    {
+        "origin": "China",
+        "destination": "Canada",
+        "date": "2025-08-09",
+        "shipments": 12
+    },
+    {
+        "origin": "China",
+        "destination": "Canada",
+        "date": "2025-09-10",
+        "shipments": 15
+    },
+    {
+        "origin": "China",
+        "destination": "Spain",
+        "date": "2025-10-05",
+        "shipments": 18
+    },
+    {
+        "origin": "China",
+        "destination": "Portugal",
+        "date": "2025-10-21",
+        "shipments": 7
+    },
+    {
+        "origin": "China",
+        "destination": "USA",
+        "date": "2025-11-15",
+        "shipments": 25
+    },
+    {
+        "origin": "China",
+        "destination": "Italy",
+        "date": "2025-11-29",
+        "shipments": 11
+    },
+    {
+        "origin": "China",
+        "destination": "France",
+        "date": "2025-12-01",
+        "shipments": 14
+    },
+    {
+        "origin": "China",
+        "destination": "Canada",
+        "date": "2025-12-18",
+        "shipments": 20
+    },
+    {
+        "origin": "China",
+        "destination": "Spain",
+        "date": "2025-12-30",
+        "shipments": 6
+    }
+]

@@ -1,0 +1,107 @@
+/* Sidebar.css */
+
+/* --- Base Sidebar Styles --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0; /* For slide from left */
+    width: 250px;
+    height: 100vh;
+    background-color: #f0f8ff; /* AliceBlue - a light blue for example */
+    color: #333; /* Darker text for better contrast on light blue */
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    overflow-y: auto;
+    /* INITIAL STATE: Off-screen to the left */
+    transform: translateX(-100%);
+    /* Note: No 'transition' property on the base class itself for transform,
+       it's handled by the -active classes for react-transition-group */
+  }
+  
+  /* --- Sidebar SLIDE Animation Classes (using "sidebar-slide" prefix) --- */
+  
+  /* ENTERING */
+  .sidebar-slide-enter {
+    /* Initial state is already transform: translateX(-100%) from .sidebar */
+  }
+  .sidebar-slide-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms ease-out; /* Animation applied during active state */
+  }
+  .sidebar-slide-enter-done {
+    transform: translateX(0); /* Ensures it stays on-screen after animation */
+  }
+  
+  /* EXITING */
+  .sidebar-slide-exit {
+    transform: translateX(0); /* Starts on-screen */
+  }
+  .sidebar-slide-exit-active {
+    transform: translateX(-100%);
+    transition: transform 300ms ease-in; /* Animation applied during active state */
+  }
+  .sidebar-slide-exit-done {
+    transform: translateX(-100%); /* Ensures it stays off-screen after animation (before unmount) */
+  }
+  
+  
+  /* --- Overlay Styles & Animation (using "overlay-fade" prefix) --- */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Below sidebar but above other content */
+    /* INITIAL STATE: Invisible */
+    opacity: 0;
+    /* Note: No 'transition' property on the base class itself for opacity,
+       it's handled by the -active classes for react-transition-group */
+  }
+  
+  /* ENTERING */
+  .overlay-fade-enter {
+    /* Initial state is already opacity: 0 from .sidebar-overlay */
+  }
+  .overlay-fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out; /* Animation applied during active state */
+  }
+  .overlay-fade-enter-done {
+    opacity: 1; /* Ensures it stays visible after animation */
+  }
+  
+  /* EXITING */
+  .overlay-fade-exit {
+    opacity: 1; /* Starts visible */
+  }
+  .overlay-fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out; /* Animation applied during active state */
+  }
+  .overlay-fade-exit-done {
+    opacity: 0; /* Ensures it stays invisible after animation (before unmount) */
+  }
+  
+  /* Optional: Basic styling for content inside the sidebar if you need it */
+  .sidebar-content {
+    margin-top: 40px; /* Example: if you have a close button or header */
+  }
+  
+  .sidebar-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #555; /* Match text color or a contrast */
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+  }
+  .sidebar-close-button:hover {
+    color: #000;
+  }
