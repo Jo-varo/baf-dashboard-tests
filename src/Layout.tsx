@@ -2,15 +2,15 @@ import { useState } from "react"
 import { ReCharts } from "./components/Recharts"
 import { ApexCharts } from "./components/ApexCharts"
 
-enum Pages {
-	RECHARTS = 'recharts',
-	LIGHTWEIGHT_CHARTS = 'lightweight_charts',
-	APEX_CHARTS = 'apex_charts'
+const Pages  = {
+	RECHARTS : 'recharts',
+	LIGHTWEIGHT_CHARTS : 'lightweight_charts',
+	APEX_CHARTS : 'apex_charts',
 }
 
 export const Layout = () => {
-	const [selectedPage,setSelectedPage] = useState<Pages>(Pages.RECHARTS)
-
+	const [selectedPage,setSelectedPage] = useState<string>(Pages.RECHARTS)
+	
 	return (
 		<div>
 			<div style={{ display: 'flex', gap: '10px', justifyContent:'center' }}>
