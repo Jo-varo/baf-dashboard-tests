@@ -80,7 +80,7 @@ const initialState: TState = {
     },
     tooltip: {
       enabled: true,
-      custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+      custom: function ({ series, seriesIndex, dataPointIndex }) {
         return '<div class="arrow_box" style="padding: 10px;">' +
           '<span>Shipments: ' + series[seriesIndex][dataPointIndex] + '</span>' +
           '</div>'
