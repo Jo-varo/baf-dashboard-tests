@@ -1,4 +1,5 @@
 // @ts-nocheck - Only for chart demo deploy, remove it later and fix all the type errors
+// WON'T BE USED
 
 import { ColorType, createChart, createTextWatermark, HistogramSeries, LineSeries } from "lightweight-charts";
 import { useEffect, useRef } from "react";

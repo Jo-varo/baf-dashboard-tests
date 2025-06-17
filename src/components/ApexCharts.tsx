@@ -12,20 +12,18 @@ const xFormatter = (data: string) => {
   return `${yearString}, ${monthString}`;
 }
 
-
 // Sync charts doesn't work
 // const syncId = 'social'
 
 const ApexChartsLine = () => {
   const options: ApexOptions = useMemo(() => ({
     chart: {
-      id:'line-1',
+      id: 'line-1',
       height: 300,
       type: 'line',
       zoom: {
         enabled: true
       },
-      
     },
     dataLabels: {
       enabled: false
@@ -43,18 +41,37 @@ const ApexChartsLine = () => {
     },
     colors: ['#080'],
     grid: {
-      row: {
-        colors: ['#f3f3f3', 'transparent'],
-        opacity: 0.5
+      show: true,
+      strokeDashArray: 6,
+      xaxis: {
+        lines: {
+          show: true
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true
+        }
       },
     },
     xaxis: {
+      labels: {
+        rotateAlways: true,
+        rotate: -80,
+        offsetY: 10
+      },
       categories: dataGroupedByMonthYear.map(i => xFormatter(i.dateRange)),
     },
     tooltip: {
       enabled: true,
-    }
+      custom: function ({ series, seriesIndex, dataPointIndex }) {
+        return '<div class="arrow_box" style="padding: 10px;">' +
+          '<span>Shipments: ' + series[seriesIndex][dataPointIndex] + '</span>' +
+          '</div>'
+      }
+    },
   }), [dataGroupedByMonthYear]);
+
   const series: ApexOptions["series"] = useMemo(() => [{
     name: "Shipments",
     data: dataGroupedByMonthYear.map(i => i.shipments)
@@ -90,18 +107,20 @@ const colors = Array.from({ length: 13 }, (_, i) => {
 const ApexChartsBar = () => {
   const options: ApexOptions = useMemo(() => ({
     chart: {
-      id:'bar-1',
+      id: 'bar-1',
       height: 300,
       type: 'bar',
       zoom: {
         enabled: true
       },
-      
+      toolbar: {
+        show: false
+      }
     },
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: '55%',
+        columnWidth: '60%',
         borderRadius: 5,
         borderRadiusApplication: 'end',
         distributed: true
@@ -119,13 +138,21 @@ const ApexChartsBar = () => {
       opacity: 1
     },
     dataLabels: {
-      enabled: false
-    },
-    title: {
-      text: 'Number of shipments per month',
-      align: 'left'
+      enabled: true,
     },
     colors: colors,
+    states: {
+      hover: {
+        filter: {
+          type: 'none'
+        }
+      },
+      active:{
+        filter:{
+          type:'none'
+        }
+      }
+    },
     grid: {
       row: {
         colors: ['#f3f3f3', 'transparent'],
@@ -134,6 +161,23 @@ const ApexChartsBar = () => {
     },
     xaxis: {
       categories: dataGroupedByMonthYear.map(i => xFormatter(i.dateRange)).map(i => i.split(', ')),
+      labels: {
+        style: {
+          colors: '#848',
+        }
+      },
+      crosshairs: {
+        show: true,
+        width: 50,
+        position: 'back',
+        opacity: 0.1,
+        fill: {
+          type: 'solid',
+          color: '#000',
+        }
+      },
+    },
+    yaxis: {
       labels: {
         style: {
           colors: '#848',
@@ -223,8 +267,12 @@ export const ApexCharts = () => {
     <div>
       <h1 style={titleStyles}>Apex charts</h1>
       <h2 style={titleStyles}>Number of shipments per month</h2>
-      <ApexChartsLine />
-      <ApexChartsBar />
+      <div style={{ border: '1px solid black', borderRadius: '10px' }}>
+        <ApexChartsLine />
+      </div>
+      <div style={{ border: '1px solid black', borderRadius: '10px' }}>
+        <ApexChartsBar />
+      </div>
       <h2 style={titleStyles}>Shipments by country</h2>
       <ApexChartsPie />
     </div>
