@@ -65,6 +65,7 @@ const initialState: TState = {
         offsetY: 10,
         style: {
           fontSize: '12px',
+          fontFamily: 'Helvetica, Arial, sans-serif',
           colors: '#000'
         }
       },
@@ -74,6 +75,7 @@ const initialState: TState = {
       labels: {
         style: {
           fontSize: '12px',
+          fontFamily: 'Helvetica, Arial, sans-serif',
           colors: '#000'
         }
       }
@@ -184,7 +186,7 @@ export default function CDD() {
           labels: {
             ...state.options.xaxis!.labels,
             style: {
-              fontFamily: 'sans-serif'
+              fontFamily: '"Montserrat", sans-serif',
             }
           }
         },
@@ -194,14 +196,13 @@ export default function CDD() {
             ...(state.options.yaxis as ApexYAxis)!.labels,
             style: {
               ...(state.options.yaxis as ApexYAxis)!.labels?.style,
-              fontFamily: 'sans-serif'
+              fontFamily: '"Montserrat", sans-serif',
             }
           }
         }
       }
     })
   }
-
 
   const changeFontSize = () => {
     let newFontSize;
