@@ -642,6 +642,7 @@ export const CDDLine = () => {
           axisBorder: {
             show: true,
             color: '#213ede',
+            // @ts-ignore: types are incorrect
             height: 2,
             offsetX: 0,
             offsetY: 0
