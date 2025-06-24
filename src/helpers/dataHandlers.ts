@@ -1,5 +1,3 @@
-//@ts-nocheck - Only for chart demo deploy, remove it later and fix all the type errors
-
 import data from '../data/data.json'
 
 const oDataGroupedByMonthYear = data.reduce((acc, item) => {
@@ -30,3 +28,11 @@ export const dataAggregationByDestination = Object.entries(
 ).map(([key, value]) => ({ destination: key, shipments: value }))
 
 
+export const xAxisFormatter = (data: string) => {
+  const [year, month] = data.split('-').map(Number);
+  const date = new Date(year, month - 1, 1);
+  const yearString = date.getFullYear();
+  const monthString = date.toLocaleString('en-US', { month: 'short' });
+
+  return `${yearString}, ${monthString}`;
+}

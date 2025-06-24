@@ -33,7 +33,7 @@ const ApexChartsLine = () => {
     },
     markers: {
       size: 5,
-      colors: '#0c0'
+      colors: ['#0c0','#000']
     },
     title: {
       text: 'Number of shipments per month',
@@ -62,6 +62,9 @@ const ApexChartsLine = () => {
       },
       categories: dataGroupedByMonthYear.map(i => xFormatter(i.dateRange)),
     },
+    legend:{
+      show:true
+    },
     tooltip: {
       enabled: true,
       custom: function ({ series, seriesIndex, dataPointIndex }) {
@@ -70,12 +73,12 @@ const ApexChartsLine = () => {
           '</div>'
       }
     },
-  }), [dataGroupedByMonthYear]);
+  }), []);
 
   const series: ApexOptions["series"] = useMemo(() => [{
     name: "Shipments",
     data: dataGroupedByMonthYear.map(i => i.shipments)
-  }], [dataGroupedByMonthYear]);
+  }], []);
 
   const [state, setState] = useState({ series, options })
 
