@@ -3,7 +3,7 @@ import type { ApexChartState } from "../../types/types";
 import { HELVETICA_FONT, MONTSERRAT_FONT } from "../../constants/fonts";
 import { generateRandomNumber, getRandomDarkColor } from "../../helpers/functions";
 import { VariantBar } from "../VariantBar";
-import { Button } from "../Button";
+import { Button } from "../Custom/Button";
 import ReactApexChart from "react-apexcharts";
 import { dataGroupedByMonthYear, xAxisFormatter } from "../../helpers/dataHandlers";
 

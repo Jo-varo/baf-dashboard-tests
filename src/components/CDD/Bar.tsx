@@ -3,7 +3,7 @@ import ReactApexChart from "react-apexcharts"
 import type { ApexChartState } from "../../types/types"
 import { dataGroupedByMonthYear, xAxisFormatter } from "../../helpers/dataHandlers"
 import { VariantBar } from "../VariantBar"
-import { Button } from "../Button"
+import { Button } from "../Custom/Button"
 
 const initialState: ApexChartState = {
   options: {

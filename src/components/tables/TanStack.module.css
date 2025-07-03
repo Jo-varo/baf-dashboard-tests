@@ -1,0 +1,7 @@
+@reference "tailwindcss";
+
+.custom_h5 {
+  h5{
+    @apply font-semibold mt-2;
+  }
+}

@@ -3,7 +3,7 @@ import type { ApexChartState } from "../../types/types"
 import { dataAggregationByDestination } from "../../helpers/dataHandlers"
 import { useRef, useState } from "react"
 import { VariantBar } from "../VariantBar"
-import { Button } from "../Button"
+import { Button } from "../Custom/Button"
 
 const initialState: ApexChartState = {
   options: {

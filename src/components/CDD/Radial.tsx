@@ -1,5 +1,5 @@
 import ReactApexChart from "react-apexcharts"
-import { Button } from "../Button"
+import { Button } from "../Custom/Button"
 import { VariantBar } from "../VariantBar"
 import { useState } from "react"
 import type { ApexChartState } from "../../types/types"

@@ -3,7 +3,7 @@ import { CDDBar } from "../components/CDD/Bar";
 import { CDDLine } from "../components/CDD/Line";
 import { CDDPie } from "../components/CDD/Pie";
 import { CDDRadial } from "../components/CDD/Radial";
-import { Button } from "../components/Button";
+import { Button } from "../components/Custom/Button";
 
 const Charts = {
   LINE: 'line',
